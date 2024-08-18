@@ -40,6 +40,15 @@ partial class Form1
         lblHeightMM = new Label();
         label6 = new Label();
         label7 = new Label();
+        label4 = new Label();
+        label5 = new Label();
+        label8 = new Label();
+        lblDistancePX1 = new Label();
+        lblOffsetPX = new Label();
+        lblOffsetMM = new Label();
+        lblDistancePX = new Label();
+        lblDistanceMM = new Label();
+        lblDistanceMM1 = new Label();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
@@ -50,6 +59,7 @@ partial class Form1
         pictureBox1.Size = new Size(651, 810);
         pictureBox1.TabIndex = 0;
         pictureBox1.TabStop = false;
+        pictureBox1.MouseMove += PictureBox1_MouseMove;
         // 
         // label1
         // 
@@ -151,11 +161,101 @@ partial class Form1
         label7.TabIndex = 8;
         label7.Text = "Image height (mm):";
         // 
+        // label4
+        // 
+        label4.AutoSize = true;
+        label4.Location = new Point(669, 268);
+        label4.Name = "label4";
+        label4.Size = new Size(46, 15);
+        label4.TabIndex = 12;
+        label4.Text = "OFFSET";
+        // 
+        // label5
+        // 
+        label5.AutoSize = true;
+        label5.Location = new Point(669, 296);
+        label5.Name = "label5";
+        label5.Size = new Size(66, 15);
+        label5.TabIndex = 13;
+        label5.Text = "Offset (px):";
+        // 
+        // label8
+        // 
+        label8.AutoSize = true;
+        label8.Location = new Point(669, 323);
+        label8.Name = "label8";
+        label8.Size = new Size(75, 15);
+        label8.TabIndex = 14;
+        label8.Text = "Offset (mm):";
+        // 
+        // lblDistancePX1
+        // 
+        lblDistancePX1.AutoSize = true;
+        lblDistancePX1.Location = new Point(669, 357);
+        lblDistancePX1.Name = "lblDistancePX1";
+        lblDistancePX1.Size = new Size(79, 15);
+        lblDistancePX1.TabIndex = 15;
+        lblDistancePX1.Text = "Distance (px):";
+        // 
+        // lblOffsetPX
+        // 
+        lblOffsetPX.AutoSize = true;
+        lblOffsetPX.Location = new Point(779, 296);
+        lblOffsetPX.Name = "lblOffsetPX";
+        lblOffsetPX.Size = new Size(13, 15);
+        lblOffsetPX.TabIndex = 16;
+        lblOffsetPX.Text = "0";
+        // 
+        // lblOffsetMM
+        // 
+        lblOffsetMM.AutoSize = true;
+        lblOffsetMM.Location = new Point(779, 323);
+        lblOffsetMM.Name = "lblOffsetMM";
+        lblOffsetMM.Size = new Size(13, 15);
+        lblOffsetMM.TabIndex = 17;
+        lblOffsetMM.Text = "0";
+        // 
+        // lblDistancePX
+        // 
+        lblDistancePX.AutoSize = true;
+        lblDistancePX.Location = new Point(779, 357);
+        lblDistancePX.Name = "lblDistancePX";
+        lblDistancePX.Size = new Size(13, 15);
+        lblDistancePX.TabIndex = 18;
+        lblDistancePX.Text = "0";
+        // 
+        // lblDistanceMM
+        // 
+        lblDistanceMM.AutoSize = true;
+        lblDistanceMM.Location = new Point(779, 381);
+        lblDistanceMM.Name = "lblDistanceMM";
+        lblDistanceMM.Size = new Size(13, 15);
+        lblDistanceMM.TabIndex = 20;
+        lblDistanceMM.Text = "0";
+        // 
+        // lblDistanceMM1
+        // 
+        lblDistanceMM1.AutoSize = true;
+        lblDistanceMM1.Location = new Point(669, 381);
+        lblDistanceMM1.Name = "lblDistanceMM1";
+        lblDistanceMM1.Size = new Size(88, 15);
+        lblDistanceMM1.TabIndex = 19;
+        lblDistanceMM1.Text = "Distance (mm):";
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(877, 837);
+        Controls.Add(lblDistanceMM);
+        Controls.Add(lblDistanceMM1);
+        Controls.Add(lblDistancePX);
+        Controls.Add(lblOffsetMM);
+        Controls.Add(lblOffsetPX);
+        Controls.Add(lblDistancePX1);
+        Controls.Add(label8);
+        Controls.Add(label5);
+        Controls.Add(label4);
         Controls.Add(lblWidthMM);
         Controls.Add(lblHeightMM);
         Controls.Add(label6);
@@ -189,4 +289,13 @@ partial class Form1
     private Label lblHeightMM;
     private Label label6;
     private Label label7;
+    private Label label4;
+    private Label label5;
+    private Label label8;
+    private Label lblDistancePX1;
+    private Label lblOffsetPX;
+    private Label lblOffsetMM;
+    private Label lblDistancePX;
+    private Label lblDistanceMM;
+    private Label lblDistanceMM1;
 }

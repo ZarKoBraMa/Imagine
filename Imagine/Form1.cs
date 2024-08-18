@@ -2,6 +2,8 @@ namespace Imagine;
 
 public partial class Form1 : Form
 {
+    private float _dpi { get; set; } = 96;
+
     public Form1()
     {
         InitializeComponent();
@@ -25,6 +27,8 @@ public partial class Form1 : Form
                 lblHeight.Text = image.Height.ToString();
                 lblDPI.Text = image.HorizontalResolution.ToString();
 
+                _dpi = image.HorizontalResolution;
+
                 // Calculate dimensions in millimeters
                 float widthInches = image.Width / image.HorizontalResolution;
                 float heightInches = image.Height / image.VerticalResolution;
@@ -41,5 +45,27 @@ public partial class Form1 : Form
                 pictureBox1.Height = image.Height;
             }
         }
+    }
+
+    private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+    {
+        // Get mouse position relative to the image
+        int mouseX = e.X;
+        int mouseY = e.Y;
+
+        lblOffsetPX.Text = $"({mouseX}, {mouseY})";
+
+        // Convert the mouse position to millimeters
+        float mouseXMM = (mouseX / _dpi) * 25.4f;
+        float mouseYMM = (mouseY / _dpi) * 25.4f;
+
+        lblOffsetMM.Text = $"({mouseXMM:F2}, {mouseYMM:F2})";
+
+        // Calculate Distance
+        double distancePX = Math.Sqrt(mouseX * mouseX + mouseY * mouseY);
+        double dispanceMM = (distancePX / _dpi) * 25.4f;
+
+        lblDistancePX.Text = $"{distancePX:F2}";
+        lblDistanceMM.Text = $"{dispanceMM:F2}";
     }
 }
